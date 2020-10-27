@@ -1,7 +1,10 @@
 <template>
   <h1>Liste des joueurs {{ playersData.name }} </h1>
 
-  <div>Ma sélection : {{ selection.length }} joueur</div>
+  <selection-box 
+    :selection="selection"
+  >
+  </selection-box>
 
   <player-card
     v-for="(player, index) in playersData.players"
@@ -15,11 +18,13 @@
 <script>
 import playersData from '../assets/data/players.json'
 import PlayerCard from './PlayerCard.vue'
+import SelectionBox from './SelectionBox.vue'
 
 export default {
   name: "player-List",
   components: {
-    PlayerCard
+    PlayerCard,
+    SelectionBox
   },
   data() {
     return {
