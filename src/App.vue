@@ -2,11 +2,12 @@
   <nav-bar
     @change-component="updateSelectedComponent"
   ></nav-bar>
-  
+
   <keep-alive>
     <component 
       :is="selectedComponent"
       v-bind="currentProps"
+      @update-selection="updateSelection"
     >
     </component>
   </keep-alive>
@@ -28,13 +29,14 @@ export default {
   },
   data() {
     return {
-      selectedComponent: 'player-list'
+      selectedComponent: 'player-list',
+      selectionArray: []
     }
   },
   computed: {
     currentProps() {
       if(this.selectedComponent == "selection-list") {
-        return { selection: this.selectedComponent }
+        return { selection: this.selectionArray }
       }
       return false
     }
@@ -42,6 +44,9 @@ export default {
   methods: {
     updateSelectedComponent(comp) {
       this.selectedComponent = comp
+    },
+    updateSelection(player) {
+      this.selectionArray.push(player)
     }
   }
 }

@@ -35,6 +35,7 @@ export default {
   methods: {
     addPlayerToSelection(player) {
       this.selection.push(player)
+      this.$emit('update-selection', player)
     }
   }
 }
