@@ -12,6 +12,7 @@
     <base-button
       text="Sélectionner"
       @click="addToSelection"
+      :isDisabled="playerInjured"
     >
     </base-button>
   </div>

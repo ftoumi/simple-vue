@@ -6,7 +6,7 @@
       <p>Aucun joueur sélectionné</p>
     </div>
     <div v-else>
-      Total : {{ total }}
+      <span>Total : {{ total }}</span>
       <div
         v-for="player in selection"
         :key="player.name" 

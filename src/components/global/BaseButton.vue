@@ -1,5 +1,8 @@
 <template>
-  <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700">
+  <button 
+    class="font-bold py-2 px-4 rounded text-white bg-blue-500 hover:bg-blue-700"
+    :disabled="isDisabled"
+  >
     {{ text }}
   </button>
 </template>
@@ -7,6 +10,6 @@
 <script>
 export default {
   name: "base-button",
-  props: ['text']
+  props: ['text', 'isDisabled']
 }
 </script>
